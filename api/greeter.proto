@@ -1,0 +1,16 @@
+syntax = "proto3";
+package message;
+option go_package = "pkg/pb";
+option csharp_namespace = "BackEndChat.Message";
+
+service Greeter {
+  rpc SayHello (stream HelloRequest) returns (stream HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
